@@ -6,15 +6,31 @@
     background: #eaeaea;
 }
 
-.mission_title {}
+.mission_image img {
+    margin: 0.5rem 0;
+    max-width: 100%;
+    height: auto;
+}
 
-.mission_id {}
+.mission_title {
+    margin: 0.5rem 0 0 0.5rem;
+    font-weight: bold;
+    color: darkblue;
+    align-self: start;
+}
 
-.mission_launch_year {}
+.mission_field {
+    margin-left: 0.5rem;
+    align-self: start;
+}
 
-.mission_launch_success {}
+.text_label {
+    font-weight: bold;
+}
 
-.mission_land_success {}
+.text_value {
+    color: darkblue;
+}
 
 @media all and (max-width: 1023px) and (min-width: 700px)  {
     .mission_card {

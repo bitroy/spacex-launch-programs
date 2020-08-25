@@ -4,16 +4,32 @@ import { Col, Card } from 'react-bootstrap'
 const MissionCard = ({ mission }) => {
     return (
 		<div className={styles.mission_card}>
-			{/* <div className={styles.mission_image}>
+			<div className={styles.mission_image}>
 				<img src={mission.links.mission_patch_small} />
-			</div> */}
+			</div>
 			<div className={styles.mission_title}>
 				{mission.mission_name} #{mission.flight_number}
 			</div>
-			<div className={styles.mission_id}>Mission Ids: {mission.mission_id}</div>
-			<div className={styles.mission_launch_year}>Launch Year: {mission.launch_year}</div>
-			<div className={styles.mission_launch_success}>Successful Launch: {mission.launch_success ? "True" : "False"}</div>
-			<div className={styles.mission_land_success}>Successful Landing: {mission.rocket.first_stage.cores.land_success ? "True" : "False"}</div>
+			<div className={styles.mission_field}>
+				<span className={styles.text_label}>Mission Ids:</span>
+				<span className={styles.text_value}>
+					{mission.mission_id.map((m_id, idx) => (
+						<li key={idx}>{m_id}</li>
+					))}
+				</span>
+			</div>
+			<div className={styles.mission_field}>
+				<span className={styles.text_label}>Launch Year: </span>
+				<span className={styles.text_value}>{mission.launch_year}</span>
+			</div>
+			<div className={styles.mission_field}>
+				<span className={styles.text_label}>Successful Launch: </span>
+				<span className={styles.text_value}>{mission.launch_success ? "True" : "False"}</span>
+			</div>
+			<div className={styles.mission_field}>
+				<span className={styles.text_label}>Successful Landing: </span>
+				<span className={styles.text_value}>{mission.rocket.first_stage.cores.land_success ? "True" : "False"}</span>
+			</div>
 		</div>
 	);
 }
