@@ -6,13 +6,13 @@ import MissionCard from './MissionCard'
 import { Row } from 'react-bootstrap'
 
 const MissionCards = () => {
-    const dispatch = useDispatch()
-    const missionState = useSelector(state => state.missions)
+	const dispatch = useDispatch()
+	const missionState = useSelector(state => state.missions)
 
-    useEffect(() => {
-        const baseAPIURL = 'https://api.spacexdata.com/v3/launches?limit=10'
-        dispatch(fetchMissionsLaunchData(baseAPIURL))
-    }, [])
+    // useEffect(() => {
+    //     const baseAPIURL = 'https://api.spacexdata.com/v3/launches?limit=10'
+    //     dispatch(fetchMissionsLaunchData(baseAPIURL))
+    // }, [])
 
     return (
 		<>
@@ -27,6 +27,6 @@ const MissionCards = () => {
 			)}
 		</>
 	);
-}
+};
 
 export default MissionCards

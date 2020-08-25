@@ -1,10 +1,13 @@
 import styles from '../styles/Home.module.css'
+import { Container } from 'react-bootstrap'
+import { wrapper } from '../redux/Store'
 import Head from 'next/head'
+
 import FiltersCard from '../components/FiltersCard'
 import MissionCards from '../components/MissionsCards'
-import { Container } from 'react-bootstrap';
+import { fetchMissionsLaunchData } from '../redux/actions/QueryAPI';
 
-export default function Home() {
+const Home = () => {
   	return (
 		<Container fluid>
 			<Head>
@@ -27,3 +30,10 @@ export default function Home() {
 		</Container>
 	);
 }
+
+export const getServerSideProps = wrapper.getServerSideProps(async ({store}) => {
+	const API_URL = 'https://api.spacexdata.com/v3/launches?limit=10'
+	await store.dispatch(fetchMissionsLaunchData(API_URL))
+});
+
+export default Home

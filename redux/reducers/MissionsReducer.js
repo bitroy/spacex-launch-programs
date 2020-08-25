@@ -1,3 +1,4 @@
+import {HYDRATE} from 'next-redux-wrapper'
 import {
     FETCH_SUCCESS,
     SHOW_ERROR,
@@ -17,6 +18,13 @@ const initialMissionState = {
 
 export default (state = initialMissionState, action) => {
     switch(action.type) {
+        case HYDRATE:
+            return {
+                ...state,
+                loading: false,
+                error: '',
+                missions: action.payload.missions.missions
+            };
         case FETCH_SUCCESS:
             return {
                 ...state,
