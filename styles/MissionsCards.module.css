@@ -1,0 +1,26 @@
+.mission_cards {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+
+@media all and (max-width: 1023px) and (min-width: 700px)  {
+    .mission_cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
+
+@media all and (max-width: 1440px) and (min-width: 1024px)  {
+    .mission_cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}

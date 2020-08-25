@@ -1,0 +1,32 @@
+.mission_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    background: #eaeaea;
+}
+
+.mission_title {}
+
+.mission_id {}
+
+.mission_launch_year {}
+
+.mission_launch_success {}
+
+.mission_land_success {}
+
+@media all and (max-width: 1023px) and (min-width: 700px)  {
+    .mission_card {
+        flex: 0 1 calc(50% - 1rem);
+        margin: 1rem 0.5rem 0 0.5rem;
+    }
+}
+
+
+@media all and (max-width: 1440px) and (min-width: 1024px)  {
+    .mission_card {
+        flex: 0 1 calc(25% - 1rem);
+        margin: 1rem 0.5rem 0 0.5rem;
+    }
+}
