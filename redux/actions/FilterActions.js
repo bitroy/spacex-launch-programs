@@ -5,16 +5,16 @@ import {
 } from './ActionTypes'
 
 export const setLaunchSuccessFlag = (data = false) => ({
-    type: 'SET_LAUNCH_FLAG',
+    type: SET_LAUNCH_FLAG,
     data
 });
 
 export const setLandSuccessFlag = (data = false) => ({
-    type: 'SET_LAND_FLAG',
+    type: SET_LAND_FLAG,
     data
 });
 
-export const setLaunchYear = (data = false) => ({
-    type: 'SET_LAUNCH_YEAR',
+export const setLaunchYearFlag = (data = false) => ({
+    type: SET_LAUNCH_YEAR,
     data
 });

@@ -1,35 +1,50 @@
 import styles from '../styles/FilterCard.module.css'
-import { Row, Col, Button } from "react-bootstrap";
 import { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { Row, Col, Button } from "react-bootstrap";
+
+import { 
+	setLaunchSuccessFlag,
+	setLandSuccessFlag,
+	setLaunchYearFlag,
+} from '../redux/actions/FilterActions'
 
 const FiltersCard = () => {
     const [yearLaunch, setYearLaunch] = useState(null)
     const [launchSuccess, setLaunchSuccess] = useState(null)
-    const [landSuccess, setLandSuccess] = useState(null)
+	const [landSuccess, setLandSuccess] = useState(null)
+	
+	const dispatch = useDispatch()
 
 	const setLaunchYear = (e) => {
-		if(e.target.type === 'button' && e.target.innerText.trim() !== '') {
-			setYearLaunch(e.target.innerText.trim())
+		const year = e.target.innerText.trim()
+		if(e.target.type === 'button' && year !== '') {
+			setYearLaunch(year)
+			dispatch(setLaunchYearFlag(year))
 		}
 	}
 
     const setSuccessfulLaunch = (e) => {
         if(e.target.innerText !== '') {
             if(e.target.innerText.trim() === 'True' || launchSuccess !== true) {
-                setLaunchSuccess(true)
+				setLaunchSuccess(true)
+				dispatch(setLaunchSuccessFlag(true))
             } else if(e.target.innerText.trim() === 'False' || launchSuccess !== false) {
-                setLaunchSuccess(false)
-            }
+				setLaunchSuccess(false)
+				dispatch(setLaunchSuccessFlag(false))
+			}
         }
     }
 
     const setSuccessfulLand = (e) => {
         if(e.target.innerText !== '') { 
             if(e.target.innerText.trim() === 'True' || landSuccess !== true) {
-                setLandSuccess(true)
+				setLandSuccess(true)
+				dispatch(setLandSuccessFlag(true))
             } else if(e.target.innerText.trim() === 'False' || landSuccess !== false) {
-                setLandSuccess(false)
-            }
+				setLandSuccess(false)
+				dispatch(setLandSuccessFlag(false))
+			}
         }
     }
 

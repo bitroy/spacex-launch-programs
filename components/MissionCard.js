@@ -1,5 +1,4 @@
 import styles from '../styles/MissionCard.module.css'
-import { Col, Card } from 'react-bootstrap'
 
 const MissionCard = ({ mission }) => {
     return (
@@ -28,7 +27,7 @@ const MissionCard = ({ mission }) => {
 			</div>
 			<div className={styles.mission_field}>
 				<span className={styles.text_label}>Successful Landing: </span>
-				<span className={styles.text_value}>{mission.rocket.first_stage.cores.land_success ? "True" : "False"}</span>
+				<span className={styles.text_value}>{mission.rocket.first_stage.cores[0].land_success ? "True" : "False"}</span>
 			</div>
 		</div>
 	);

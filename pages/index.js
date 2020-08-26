@@ -32,7 +32,7 @@ const Home = () => {
 }
 
 export const getServerSideProps = wrapper.getServerSideProps(async ({store}) => {
-	const API_URL = 'https://api.spacexdata.com/v3/launches?limit=10'
+	const API_URL = process.env.NEXT_PUBLIC_SPACEX_API_URL
 	await store.dispatch(fetchMissionsLaunchData(API_URL))
 });
 
