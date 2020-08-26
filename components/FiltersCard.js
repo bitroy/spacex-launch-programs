@@ -26,11 +26,11 @@ const FiltersCard = () => {
 
     const setSuccessfulLaunch = (e) => {
         if(e.target.innerText !== '') {
-            if(e.target.innerText.trim() === 'True' || launchSuccess !== true) {
-				setLaunchSuccess(true)
+            if(e.target.innerText.trim() === 'True' && launchSuccess !== 'True') {
+				setLaunchSuccess('True')
 				dispatch(setLaunchSuccessFlag(true))
-            } else if(e.target.innerText.trim() === 'False' || launchSuccess !== false) {
-				setLaunchSuccess(false)
+            } else if(e.target.innerText.trim() === 'False' && launchSuccess !== 'False') {
+				setLaunchSuccess('False')
 				dispatch(setLaunchSuccessFlag(false))
 			}
         }
@@ -38,11 +38,11 @@ const FiltersCard = () => {
 
     const setSuccessfulLand = (e) => {
         if(e.target.innerText !== '') { 
-            if(e.target.innerText.trim() === 'True' || landSuccess !== true) {
-				setLandSuccess(true)
+            if(e.target.innerText.trim() === 'True' && landSuccess !== 'True') {
+				setLandSuccess('True')
 				dispatch(setLandSuccessFlag(true))
-            } else if(e.target.innerText.trim() === 'False' || landSuccess !== false) {
-				setLandSuccess(false)
+            } else if(e.target.innerText.trim() === 'False' && landSuccess !== 'False') {
+				setLandSuccess('False')
 				dispatch(setLandSuccessFlag(false))
 			}
         }
@@ -217,7 +217,7 @@ const FiltersCard = () => {
 						<Button 
 							className={styles.filter_button} 
 							variant="success" 
-							active={launchSuccess !== null && launchSuccess ? true : false}
+							active={launchSuccess === 'True' ? true : false}
 						>
 							True
 						</Button>
@@ -226,7 +226,7 @@ const FiltersCard = () => {
 						<Button 
 							className={styles.filter_button} 
 							variant="success" 
-							active={launchSuccess !== null && !launchSuccess ? true : false}
+							active={launchSuccess === 'False' ? true : false}
 						>
 							False
 						</Button>
@@ -241,7 +241,7 @@ const FiltersCard = () => {
 						<Button 
 							className={styles.filter_button} 
 							variant="success" 
-							active={landSuccess !== null && landSuccess ? true : false}
+							active={landSuccess === 'True' ? true : false}
 						>
 							True
 						</Button>
@@ -250,7 +250,7 @@ const FiltersCard = () => {
 						<Button 
 							className={styles.filter_button} 
 							variant="success" 
-							active={landSuccess !== null && !landSuccess ? true : false}
+							active={landSuccess === 'False' ? true : false}
 						>
 							False
 						</Button>
