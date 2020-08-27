@@ -26,14 +26,12 @@ const FilterYearsCard = ({ styles }) => {
     
     const setLaunchYear = (e) => {
 		const year = e.target.innerText.trim()
-		
 		if(year !== '') {
 			setYearLaunch(year)
 			dispatch(setLaunchYearFlag(year))
 		}
 	}
 
-	console.log("FYC", yearLaunch);
     return (
 		<div className={styles.filter_div}>
 			<h3 className={styles.filter_section_header}>Launch Year</h3>

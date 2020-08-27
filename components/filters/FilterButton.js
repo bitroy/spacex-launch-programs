@@ -2,7 +2,6 @@ import styles from '../../styles/FilterButton.module.css'
 import React from 'react'
 
 const FilterButton = ({ name, active }) => {
-	console.log("FB", active);
     return (
 		<>
 			{active ? (

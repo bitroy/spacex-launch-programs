@@ -14,7 +14,6 @@
   flex-direction: column;
   width: 100vw;
   height: fit-content;
-  /* background: lightpink; */
   margin: 0.25rem;
   border-radius: 0.5rem;
 }
@@ -24,8 +23,6 @@
   flex-direction: column;
   width: 100vw;
   height: fit-content;
-  /* background: crimson; */
-  /* margin: 0.25rem; */
 }
 
 .header_section h1 {
