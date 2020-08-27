@@ -1,3 +1,8 @@
+.container {
+  max-width:none;
+  margin:0 0.5rem;
+}
+
 .parent {
   display: flex;
   flex-wrap: wrap;
@@ -6,11 +11,12 @@
 
 .left_section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   width: 100vw;
   height: fit-content;
-  background: lightpink;
+  /* background: lightpink; */
   margin: 0.25rem;
+  border-radius: 0.5rem;
 }
 
 .right_section {
@@ -18,11 +24,13 @@
   flex-direction: column;
   width: 100vw;
   height: fit-content;
-  background: crimson;
-  margin: 0.25rem;
+  /* background: crimson; */
+  /* margin: 0.25rem; */
 }
 
 .header_section h1 {
+  font-size: 2rem;
+  font-weight: bold;
   margin-left: 0.5rem;
 }
 
@@ -36,6 +44,12 @@
 }
 
 @media all and (max-width: 1023px) and (min-width: 700px)  {
+  .header_section h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+  }
+
   .parent {
     flex-wrap: nowrap;
     flex-grow: 2;
@@ -47,6 +61,12 @@
 }
 
 @media all and (max-width: 1440px) and (min-width: 1024px)  {
+  .header_section h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+  }
+
   .parent {
     flex-wrap: nowrap;
     flex-grow: 2;

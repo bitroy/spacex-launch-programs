@@ -1,11 +1,13 @@
-import styles from '../styles/MissionCard.module.css'
+import styles from '../../styles/MissionCard.module.css'
 
 const MissionCard = ({ mission }) => {
     return (
 		<div className={styles.mission_card}>
-			<div className={styles.mission_image}>
-				<img src={mission.links.mission_patch_small} />
-			</div>
+			{mission.links.mission_patch_small ? (
+				<div className={styles.mission_image}>
+					<img src={mission.links.mission_patch_small} />
+				</div>
+			) : null}
 			<div className={styles.mission_title}>
 				{mission.mission_name} #{mission.flight_number}
 			</div>

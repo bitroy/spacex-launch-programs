@@ -1,5 +1,11 @@
-.filter_div {
-    margin-bottom: 0.5rem;
+.filter_card {
+    display: flex;
+    flex-direction: column;
+    background: #fffefe;
+}
+
+.header {
+    margin-left: 0.5rem;
 }
 
 .filter_section_header {
@@ -7,14 +13,8 @@
     justify-content: center;
 }
 
-.filter_col {
-    display:flex;
-    justify-content:center;
-    margin-bottom: 0.5rem; 
-}
-
-.filter_button {
-    color: black;
-    background: lightgreen;
-    font-weight: bold;
+.filter_year_buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

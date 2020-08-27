@@ -1,7 +1,7 @@
-import styles from '../styles/MissionsCards.module.css'
+import styles from '../../styles/MissionsCards.module.css'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMissionsLaunchData } from '../redux/actions/QueryAPI'
+import { fetchMissionsLaunchData } from '../../redux/actions/QueryAPI'
 import MissionCard from './MissionCard'
 
 const MissionCards = () => {
@@ -19,8 +19,6 @@ const MissionCards = () => {
 		if(missionState.launch_year != null) {
             API_URL += `&launch_year=${missionState.launch_year}`
 		}
-
-		console.log('UseEffect', API_URL)
 		
 		if(API_URL !== process.env.NEXT_PUBLIC_SPACEX_API_URL) {
 			dispatch(fetchMissionsLaunchData(API_URL))

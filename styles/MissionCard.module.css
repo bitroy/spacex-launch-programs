@@ -3,8 +3,13 @@
     flex-direction: column;
     align-items: center;
     margin: 0.5rem 0.5rem 0 0.5rem;
-    background: #eaeaea;
+    background: #ffffff;
     border-radius: 0.5rem;
+}
+
+.mission_image {
+    background: #eaeaea;
+    margin: 1rem;
 }
 
 .mission_image img {
@@ -23,6 +28,10 @@
 .mission_field {
     margin-left: 0.5rem;
     align-self: start;
+}
+
+.mission_field li {
+    margin-left: 0.5rem;
 }
 
 .text_label {
