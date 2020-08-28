@@ -63,3 +63,10 @@
         font-size: 1.4vw;
     }
 }
+
+@media all and (min-width: 1441px)  {
+    .mission_card {
+        width: 50vw;
+        font-size: 3vw;
+    }
+}

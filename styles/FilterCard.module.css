@@ -44,3 +44,21 @@
         font-size: 1.4vw;
     }
 }
+
+@media all and (min-width: 1441px)  {
+    .filter_card {
+        width: 50vw;
+    }
+
+    .filter_div {
+        margin: 1rem;
+    }
+
+    .filter_card_header {
+        font-size: 3vw;
+    }
+
+    .filter_section_header {
+        font-size: 2vw;
+    }
+}

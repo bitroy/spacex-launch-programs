@@ -47,3 +47,13 @@
         font-size: 1.4vw;
     }
 }
+
+@media all and (min-width: 1441px)  {
+    .button {
+        font-size: 1.8vw;
+    }
+
+    .button_active {
+        font-size: 1.8vw;
+    }
+}

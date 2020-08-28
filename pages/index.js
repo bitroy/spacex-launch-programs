@@ -12,8 +12,8 @@ const Home = () => {
 			<Head>
 				<title>SpaceX Launch Program</title>
 			</Head>
-			<header className={styles.header_section}>
-				<h1>SpaceX Launch Programs</h1>
+			<header>
+				<div className={styles.header_section}>SpaceX Launch Programs</div>
 			</header>
 			<main className={styles.parent}>
 				<div className={styles.left_section}>
@@ -23,8 +23,8 @@ const Home = () => {
 					<MissionCards />
 				</div>
 			</main>
-			<footer className={styles.footer_section}>
-				<h3>Developed by Pranoy Roy</h3>
+			<footer>
+				<div className={styles.footer_section}>Developed by: Pranoy Roy</div>
 			</footer>
 		</div>
 	);
