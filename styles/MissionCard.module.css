@@ -5,6 +5,7 @@
     margin-top: 0.75rem;
     background: #ffffff;
     border-radius: 0.25rem;
+    font-size: 5vw;
 }
 
 .mission_image {
@@ -46,10 +47,11 @@
     color: darkblue;
 }
 
-@media all and (max-width: 1023px) and (min-width: 700px)  {
+@media all and (max-width: 1024px) and (min-width: 700px)  {
     .mission_card {
         flex: 0 1 calc(50% - 1rem);
         margin: 0.75rem 0.5rem 0 0.5rem;
+        font-size: 2vw;
     }
 }
 
@@ -58,5 +60,6 @@
     .mission_card {
         flex: 0 1 calc(25% - 1rem);
         margin: 0.75rem 0.5rem 0 0.5rem;
+        font-size: 1.4vw;
     }
 }

@@ -27,3 +27,23 @@
     cursor: pointer;
     margin: 0.5rem;
 }
+
+@media all and (max-width: 1024px) and (min-width: 700px) {
+    .button {
+        font-size: 1.8vw;
+    }
+
+    .button_active {
+        font-size: 1.8vw;
+    }   
+}
+
+@media all and (max-width: 1440px) and (min-width: 1024px) {
+    .button {
+        font-size: 1.4vw;
+    }
+
+    .button_active {
+        font-size: 1.4vw;
+    }
+}

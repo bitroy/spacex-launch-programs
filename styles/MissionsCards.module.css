@@ -5,11 +5,10 @@
 }
 
 
-@media all and (max-width: 1023px) and (min-width: 700px)  {
+@media all and (max-width: 1024px) and (min-width: 700px)  {
     .mission_cards {
         flex-direction: row;
         flex-wrap: wrap;
-        /* margin-bottom: 1rem; */
         margin-right: 0.5rem;
         margin-left: 0.5rem; 
     }
@@ -19,7 +18,6 @@
     .mission_cards {
         flex-direction: row;
         flex-wrap: wrap;
-        /* margin-bottom: 1rem; */
         margin-right: 0.5rem;
         margin-left: 0.5rem;
     }
