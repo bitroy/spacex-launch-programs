@@ -8,13 +8,19 @@ const FilterLandCard = ({ styles }) => {
     const dispatch = useDispatch()
 
     const setSuccessfulLand = (e) => {
-        if(e.target.innerText !== '') { 
-            if(e.target.innerText.trim() === 'True' && landSuccess !== 'True') {
-				setLandSuccess('True')
-				dispatch(setLandSuccessFlag(true))
-            } else if(e.target.innerText.trim() === 'False' && landSuccess !== 'False') {
-				setLandSuccess('False')
-				dispatch(setLandSuccessFlag(false))
+		const land = e.target.innerText.trim()
+        if(land !== '') {
+			if(land === landSuccess) {
+				setLandSuccess(null)
+				dispatch(setLandSuccessFlag(null))
+			} else {
+				if(land === 'True' && landSuccess !== 'True') {
+					setLandSuccess('True')
+					dispatch(setLandSuccessFlag(true))
+				} else if(land === 'False' && landSuccess !== 'False') {
+					setLandSuccess('False')
+					dispatch(setLandSuccessFlag(false))
+				}
 			}
         }
     }

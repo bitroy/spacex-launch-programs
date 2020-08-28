@@ -27,8 +27,13 @@ const FilterYearsCard = ({ styles }) => {
     const setLaunchYear = (e) => {
 		const year = e.target.innerText.trim()
 		if(year !== '') {
-			setYearLaunch(year)
-			dispatch(setLaunchYearFlag(year))
+			if(yearLaunch === year) {
+				setYearLaunch(null)
+				dispatch(setLaunchYearFlag(null))	
+			} else {
+				setYearLaunch(year)
+				dispatch(setLaunchYearFlag(year))
+			}
 		}
 	}
 

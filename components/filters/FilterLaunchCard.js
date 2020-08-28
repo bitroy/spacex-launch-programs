@@ -8,13 +8,19 @@ const FilterLaunchCard = ({ styles }) => {
     const dispatch = useDispatch()
 
     const setSuccessfulLaunch = (e) => {
-        if(e.target.innerText !== '') {
-            if(e.target.innerText.trim() === 'True' && launchSuccess !== 'True') {
-				setLaunchSuccess('True')
-				dispatch(setLaunchSuccessFlag(true))
-            } else if(e.target.innerText.trim() === 'False' && launchSuccess !== 'False') {
-				setLaunchSuccess('False')
-				dispatch(setLaunchSuccessFlag(false))
+		const launch = e.target.innerText.trim()
+        if(launch !== '') {
+			if(launch === launchSuccess) {
+				setLaunchSuccess(null)
+				dispatch(setLaunchSuccessFlag(null))
+			} else {
+				if(launch === 'True' && launchSuccess !== 'True') {
+					setLaunchSuccess('True')
+					dispatch(setLaunchSuccessFlag(true))
+				} else if(launch === 'False' && launchSuccess !== 'False') {
+					setLaunchSuccess('False')
+					dispatch(setLaunchSuccessFlag(false))
+				}
 			}
         }
     }

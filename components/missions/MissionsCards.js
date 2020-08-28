@@ -20,9 +20,9 @@ const MissionCards = () => {
             API_URL += `&launch_year=${missionState.launch_year}`
 		}
 		
-		if(API_URL !== process.env.NEXT_PUBLIC_SPACEX_API_URL) {
-			dispatch(fetchMissionsLaunchData(API_URL))
-		}
+		
+		dispatch(fetchMissionsLaunchData(API_URL))
+		
     }, [missionState.launch_success, missionState.land_success, missionState.launch_year]);
 
     return (
