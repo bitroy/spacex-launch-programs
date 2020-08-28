@@ -5,7 +5,7 @@ const MissionCard = ({ mission }) => {
 		<div className={styles.mission_card}>
 			{mission.links.mission_patch_small ? (
 				<div className={styles.mission_image}>
-					<img src={mission.links.mission_patch_small} />
+					<img src={mission.links.mission_patch_small} alt={mission.mission_name} loading="lazy" />
 				</div>
 			) : null}
 			<div className={styles.mission_title}>
@@ -14,9 +14,11 @@ const MissionCard = ({ mission }) => {
 			<div className={styles.mission_field}>
 				<span className={styles.text_label}>Mission Ids:</span>
 				<span className={styles.text_value}>
-					{mission.mission_id.map((m_id, idx) => (
-						<li key={idx}>{m_id}</li>
-					))}
+					<ul>
+						{mission.mission_id.map((m_id, idx) => (
+							<li key={idx}>{m_id}</li>
+						))}
+					</ul>
 				</span>
 			</div>
 			<div className={styles.mission_field}>
