@@ -1,20 +1,46 @@
 .filter_card {
     display: flex;
     flex-direction: column;
+    margin-top: 0.75rem;
     background: #fffefe;
+    border-radius: 0.25rem;
 }
 
-.header {
+.filter_card_header {
     margin-left: 0.5rem;
+    font-weight: bold;
+    font-size: 10vw;
 }
 
 .filter_section_header {
     display: flex;
     justify-content: center;
+    font-weight: bolder;
+    font-size: 5vw;
 }
 
 .filter_year_buttons {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+@media all and (max-width: 1023px) and (min-width: 700px)  {
+    .filter_card_header {
+        font-size: 4vw;
+    }
+
+    .filter_section_header {
+        font-size: 2vw;
+    }
+}
+
+@media all and (max-width: 1440px) and (min-width: 1024px)  {
+    .filter_card_header {
+        font-size: 4vw;
+    }
+
+    .filter_section_header {
+        font-size: 2vw;
+    }
 }

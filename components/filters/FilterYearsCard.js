@@ -39,7 +39,7 @@ const FilterYearsCard = ({ styles }) => {
 
     return (
 		<div className={styles.filter_div}>
-			<h3 className={styles.filter_section_header}>Launch Year</h3>
+			<div className={styles.filter_section_header}>Launch Year</div>
 			<hr width="50%" />
 			<div className={styles.filter_year_buttons} onClick={(e) => setLaunchYear(e)}>
 				{filterYears.map((year, idx) => (

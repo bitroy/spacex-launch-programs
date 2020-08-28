@@ -27,7 +27,7 @@ const FilterLaunchCard = ({ styles }) => {
     
     return (
 		<div className={styles.filter_div}>
-			<h3 className={styles.filter_section_header}>Successful Launch</h3>
+			<div className={styles.filter_section_header}>Successful Launch</div>
 			<hr width="50%" />
 			<div className={styles.filter_year_buttons} onClick={(e) => setSuccessfulLaunch(e)}>
 				<FilterButton active={launchSuccess === "True" ? true : false} name={"True"} />

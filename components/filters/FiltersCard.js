@@ -7,7 +7,7 @@ const FiltersCard = () => {
 
     return (
 		<div className={styles.filter_card}>
-			<h1 className={styles.header}>Filters</h1>
+			<div className={styles.filter_card_header}>Filters</div>
 			<FilterYearsCard styles={styles} />
 			<FilterLaunchCard styles={styles} />
 			<FilterLandCard styles={styles} />		

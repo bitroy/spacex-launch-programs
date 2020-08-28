@@ -9,9 +9,9 @@
     .mission_cards {
         flex-direction: row;
         flex-wrap: wrap;
-        margin-bottom: 1rem;
+        /* margin-bottom: 1rem; */
         margin-right: 0.5rem;
-        margin-left: 0.5rem;
+        margin-left: 0.5rem; 
     }
 }
 
@@ -19,7 +19,7 @@
     .mission_cards {
         flex-direction: row;
         flex-wrap: wrap;
-        margin-bottom: 1rem;
+        /* margin-bottom: 1rem; */
         margin-right: 0.5rem;
         margin-left: 0.5rem;
     }

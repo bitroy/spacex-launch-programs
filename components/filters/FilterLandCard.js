@@ -27,7 +27,7 @@ const FilterLandCard = ({ styles }) => {
 
     return (
 		<div className={styles.filter_div}>
-			<h3 className={styles.filter_section_header}>Successful Landing</h3>
+			<div className={styles.filter_section_header}>Successful Landing</div>
 			<hr width="50%" />
 			<div className={styles.filter_year_buttons} onClick={(e) => setSuccessfulLand(e)}>
 				<FilterButton className={styles.filter_button} active={landSuccess === "True" ? true : false} name={"True"} />

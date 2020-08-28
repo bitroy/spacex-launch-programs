@@ -13,13 +13,15 @@ const MissionCard = ({ mission }) => {
 			</div>
 			<div className={styles.mission_field}>
 				<span className={styles.text_label}>Mission Ids:</span>
-				<span className={styles.text_value}>
-					<ul>
-						{mission.mission_id.map((m_id, idx) => (
-							<li key={idx}>{m_id}</li>
-						))}
-					</ul>
-				</span>
+				{mission.mission_id.length > 0 ? (
+					<span className={styles.text_value}>
+						<div>
+							{mission.mission_id.map((m_id, idx) => (
+								<li key={idx}>{m_id}</li>
+							))}
+						</div>
+					</span>
+				) : null}
 			</div>
 			<div className={styles.mission_field}>
 				<span className={styles.text_label}>Launch Year: </span>

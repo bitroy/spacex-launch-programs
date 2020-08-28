@@ -14,7 +14,7 @@
   flex-direction: column;
   width: 100vw;
   height: fit-content;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   border-radius: 0.5rem;
 }
 
