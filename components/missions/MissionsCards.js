@@ -20,10 +20,13 @@ const MissionCards = () => {
             API_URL += `&launch_year=${missionState.launch_year}`
 		}
 		
-		
 		dispatch(fetchMissionsLaunchData(API_URL))
 		
-    }, [missionState.launch_success, missionState.land_success, missionState.launch_year]);
+	}, [missionState.launch_success, missionState.land_success, missionState.launch_year]);
+	
+	const RenderMissionsCards = missionState.missions.map((mission, idx) => (
+		<MissionCard key={idx} mission={mission} />
+	))
 
     return (
 		<>
@@ -31,9 +34,7 @@ const MissionCards = () => {
 			{missionState.error ? <h1 style={{ textAlign: "center" }}>missionState.error</h1> : null}
 			{missionState.error || missionState.loading ? null : (
 				<div className={styles.mission_cards}>
-					{missionState.missions.map((mission, idx) => (
-						<MissionCard key={idx} mission={mission} />
-					))}
+					{RenderMissionsCards}
 				</div>
 			)}
 		</>

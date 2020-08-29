@@ -1,14 +1,17 @@
 import styles from 'styles/MissionCard.module.css'
 
 const MissionCard = ({ mission }) => {
+	const normalImg = mission.links.mission_patch_small
+	const largeImg = mission.links.mission_patch
     return (
 		<div className={styles.mission_card}>
 			{mission.links.mission_patch_small ? (
 				<div className={styles.mission_image}>
 					<img 
-						src={mission.links.mission_patch}
+						src={mission.links.mission_patch_small}
+						srcSet={`${normalImg} 700w, ${largeImg} 1024w`}
 						alt={mission.mission_name} 
-						loading="lazy" 
+						loading="lazy"
 					/>
 				</div>
 			) : null}

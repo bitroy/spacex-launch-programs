@@ -13,12 +13,3 @@
         margin-left: 0.5rem; 
     }
 }
-
-@media all and (max-width: 1440px) and (min-width: 1024px)  {
-    .mission_cards {
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
-    }
-}
