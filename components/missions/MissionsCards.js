@@ -1,7 +1,7 @@
-import styles from '../../styles/MissionsCards.module.css'
+import styles from 'styles/MissionsCards.module.css'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMissionsLaunchData } from '../../redux/actions/QueryAPI'
+import { fetchMissionsLaunchData } from 'redux/actions/QueryAPI'
 import MissionCard from './MissionCard'
 
 const MissionCards = () => {

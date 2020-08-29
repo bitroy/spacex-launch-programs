@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import FilterButton from './FilterButton'
-import { setLaunchSuccessFlag } from '../../redux/actions/FilterActions'
+import { setLaunchSuccessFlag } from 'redux/actions/FilterActions'
 
 const FilterLaunchCard = ({ styles }) => {
     const [launchSuccess, setLaunchSuccess] = useState(null)

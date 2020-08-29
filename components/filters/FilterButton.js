@@ -1,4 +1,4 @@
-import styles from '../../styles/FilterButton.module.css'
+import styles from 'styles/FilterButton.module.css'
 import React from 'react'
 
 const FilterButton = ({ name, active }) => {

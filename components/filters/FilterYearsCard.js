@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import FilterButton from './FilterButton';
-import { setLaunchYearFlag } from '../../redux/actions/FilterActions';
+import { setLaunchYearFlag } from 'redux/actions/FilterActions';
 
 const FilterYearsCard = ({ styles }) => {
     const [filterYears, setFilterYears] = useState([])

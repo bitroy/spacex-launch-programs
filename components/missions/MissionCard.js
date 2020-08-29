@@ -1,4 +1,4 @@
-import styles from '../../styles/MissionCard.module.css'
+import styles from 'styles/MissionCard.module.css'
 
 const MissionCard = ({ mission }) => {
 	const normalImg = mission.links.mission_patch_small

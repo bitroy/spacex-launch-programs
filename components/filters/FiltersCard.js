@@ -1,4 +1,4 @@
-import styles from '../../styles/FilterCard.module.css'
+import styles from 'styles/FilterCard.module.css'
 import FilterYearsCard from './FilterYearsCard'
 import FilterLandCard from './FilterLandCard'
 import FilterLaunchCard from './FilterLaunchCard';
