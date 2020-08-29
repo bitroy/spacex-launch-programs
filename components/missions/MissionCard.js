@@ -22,11 +22,11 @@ const MissionCard = ({ mission }) => {
 				<span className={styles.text_label}>Mission Ids:</span>
 				{mission.mission_id.length > 0 ? (
 					<span className={styles.text_value}>
-						<div>
+						<ul>
 							{mission.mission_id.map((m_id, idx) => (
 								<li key={idx}>{m_id}</li>
 							))}
-						</div>
+						</ul>
 					</span>
 				) : null}
 			</div>

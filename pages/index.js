@@ -11,6 +11,7 @@ const Home = () => {
 		<div className={styles.container}>
 			<Head>
 				<title>SpaceX Launch Program</title>
+				<meta name="description" content="SpaceX Launch Program Frontend with Filters" />
 			</Head>
 			<header>
 				<div className={styles.header_section}>SpaceX Launch Programs</div>
