@@ -33,6 +33,7 @@
 
 .text_value ul {
     margin: 0;
+    padding: 0 0 0 25px;
 }
 
 .mission_field:last-child {
@@ -64,9 +65,25 @@
     }
 }
 
-@media all and (min-width: 1440px)  {
+@media all and (min-width: 1441px)  {
     .mission_card {
         width: 50vw;
         font-size: 3vw;
+    }
+
+    .mission_title {
+        margin-left: 1.5rem;
+    }
+
+    .mission_field {
+        margin-left: 1.5rem;
+    }
+
+    .mission_field:last-child {
+        margin-bottom: 1rem;
+    }
+
+    .text_value ul {
+        margin-left: 5rem;
     }
 }

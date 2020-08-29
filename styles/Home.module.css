@@ -79,7 +79,7 @@
   }
 }
 
-@media all and (min-width: 1440px)  {
+@media all and (min-width: 1441px)  {
   .container {
     display: flex;
     flex-direction: column;
