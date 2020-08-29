@@ -9,7 +9,7 @@ const MissionCard = ({ mission }) => {
 				<div className={styles.mission_image}>
 					<img 
 						src={mission.links.mission_patch_small}
-						srcSet={`${normalImg} 700w, ${largeImg} 1024w`}
+						srcSet={`${normalImg} 920w, ${largeImg} 1024w`}
 						alt={mission.mission_name} 
 						loading="lazy"
 					/>
