@@ -16,7 +16,7 @@ const initialMissionState = {
 	launch_year: null,
 }
 
-export default (state = initialMissionState, action) => {
+const missionReducer = (state = initialMissionState, action) => {
     switch(action.type) {
         case HYDRATE:
             return {
@@ -36,7 +36,7 @@ export default (state = initialMissionState, action) => {
             return {
                 ...state,
                 loading: false,
-                error: 'Something Went Wrong!',
+                error: action.data ? action.data : 'Something Went Wrong!',
                 missions: []
             };
         case SET_LAUNCH_FLAG:
@@ -58,3 +58,5 @@ export default (state = initialMissionState, action) => {
             return state;
     }
 }
+
+export default missionReducer
