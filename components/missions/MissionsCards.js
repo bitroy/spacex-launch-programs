@@ -1,8 +1,7 @@
-import styles from 'styles/MissionsCards.module.css'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchMissionsLaunchData } from 'redux/actions/QueryAPI'
-import MissionCard from './MissionCard'
+import InfiniteMissionsList from './InfiniteMissionsList';
 
 const MissionCards = () => {
 	const dispatch = useDispatch()
@@ -20,22 +19,15 @@ const MissionCards = () => {
             API_URL += `&launch_year=${missionState.launch_year}`
 		}
 		
-		dispatch(fetchMissionsLaunchData(API_URL))
-		
+		dispatch(fetchMissionsLaunchData(API_URL))		
 	}, [missionState.launch_success, missionState.land_success, missionState.launch_year]);
-	
-	const RenderMissionsCards = missionState.missions.map((mission, idx) => (
-		<MissionCard key={idx} mission={mission} />
-	))
 
     return (
 		<>
 			{missionState.loading ? <h1 style={{ textAlign: "center" }}>Loading</h1> : null}
 			{missionState.error ? <h1 style={{ textAlign: "center" }}>missionState.error</h1> : null}
 			{missionState.error || missionState.loading ? null : (
-				<div className={styles.mission_cards}>
-					{RenderMissionsCards}
-				</div>
+				<InfiniteMissionsList missions={missionState.missions} />
 			)}
 		</>
 	);
