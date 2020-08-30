@@ -32,21 +32,17 @@ const InfiniteMissionsList = ({ missions }) => {
 		if(showItems.length === missions.length){
 			setHasItems(false);
 		} else {
-			setTimeout(() => {
-				const currentItemsCount = showItems.length
-				const addItems = [...showItems, ...missions.slice(currentItemsCount, currentItemsCount + 4)];
-				setShowItems(addItems);
-			}, 1000);
+			const currentItemsCount = showItems.length
+			const addItems = [...showItems, ...missions.slice(currentItemsCount, currentItemsCount + 4)];
+			setShowItems(addItems);
 		}
     }
     
     return (
 		<InfiniteScroll
             className={styles.mission_cards}
-			pageStart={0}
 			loadMore={loadMore}
 			hasMore={hasItems}
-			loader={<div className="loader" key={0}><strong>Loading ...</strong></div>}
 			useWindow={false}>
 			{showItemsCards()}
 		</InfiniteScroll>

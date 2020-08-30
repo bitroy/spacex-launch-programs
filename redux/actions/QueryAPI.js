@@ -16,11 +16,15 @@ export const showError = (data = {}) => ({
 export const fetchMissionsLaunchData = (API_URL) => {
     return async (dispatch) => {
         try {
-            const response = await fetch(API_URL)
+            const response = await fetch(API_URL);
             const data = await response.json()
-            dispatch(setMissionsLaunchData(data))   
+            if(data.error) {
+                dispatch(showError())
+            } else {
+                dispatch(setMissionsLaunchData(data))   
+            }    
         } catch (error) {
             dispatch(showError())
-        }
+        }   
     }
 } 

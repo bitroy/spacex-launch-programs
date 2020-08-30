@@ -1,20 +1,13 @@
 import styles from 'styles/MissionCard.module.css'
 
 const MissionCard = ({ mission }) => {
-	const normalImg = mission.links.mission_patch_small
-	const largeImg = mission.links.mission_patch
+	const normalImg = mission.links.mission_patch_small ? mission.links.mission_patch_small : "./SpaceX.webp"
+	const largeImg = mission.links.mission_patch ? mission.links.mission_patch : "./SpaceX.webp"
     return (
 		<div className={styles.mission_card}>
-			{/* {mission.links.mission_patch_small ? ( */}
-				<div className={styles.mission_image}>
-					<img 
-						src='./SpaceX.webp'
-						srcSet={`${normalImg} 920w, ${largeImg} 1024w`}
-						alt={mission.mission_name} 
-						loading="lazy"
-					/>
-				</div>
-			{/* ) : null} */}
+			<div className={styles.mission_image}>
+				<img src="./SpaceX.webp" srcSet={`${normalImg} 920w, ${largeImg} 1024w`} alt={mission.mission_name} loading="lazy" />
+			</div>
 			<div className={styles.mission_title}>
 				{mission.mission_name} #{mission.flight_number}
 			</div>
@@ -40,12 +33,7 @@ const MissionCard = ({ mission }) => {
 			</div>
 			<div className={styles.mission_field}>
 				<span className={styles.text_label}>Successful Landing: </span>
-				<span className={styles.text_value}>
-					{
-						mission.rocket.first_stage.cores[0].land_success === null 
-						? null : mission.rocket.first_stage.cores[0].land_success ? "True" : "False"
-					}
-				</span>
+				<span className={styles.text_value}>{mission.rocket.first_stage.cores[0].land_success === null ? null : mission.rocket.first_stage.cores[0].land_success ? "True" : "False"}</span>
 			</div>
 		</div>
 	);

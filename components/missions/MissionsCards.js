@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchMissionsLaunchData } from 'redux/actions/QueryAPI'
-import InfiniteMissionsList from './InfiniteMissionsList';
+import InfiniteMissionsList from 'components/missions/InfiniteMissionsList'
 
 const MissionCards = () => {
 	const dispatch = useDispatch()
@@ -18,14 +18,14 @@ const MissionCards = () => {
 		if(missionState.launch_year != null) {
             API_URL += `&launch_year=${missionState.launch_year}`
 		}
-		
-		dispatch(fetchMissionsLaunchData(API_URL))		
+
+		dispatch(fetchMissionsLaunchData(API_URL))
 	}, [missionState.launch_success, missionState.land_success, missionState.launch_year]);
 
     return (
 		<>
 			{missionState.loading ? <h1 style={{ textAlign: "center" }}>Loading</h1> : null}
-			{missionState.error ? <h1 style={{ textAlign: "center" }}>missionState.error</h1> : null}
+			{missionState.error ? <h1 style={{ textAlign: "center" }}>{missionState.error}</h1> : null}
 			{missionState.error || missionState.loading ? null : (
 				<InfiniteMissionsList missions={missionState.missions} />
 			)}
