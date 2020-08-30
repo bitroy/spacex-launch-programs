@@ -19,7 +19,7 @@ export const fetchMissionsLaunchData = (API_URL) => {
             const response = await fetch(API_URL);
             const data = await response.json()
             if(data.error) {
-                dispatch(showError())
+                dispatch(showError('API is Down!'))
             } else {
                 dispatch(setMissionsLaunchData(data))   
             }    
