@@ -24,7 +24,7 @@ const MissionCards = () => {
 	}, [missionState.launch_success, missionState.land_success, missionState.launch_year]);
 
     return (
-		<>
+		<div className={styles.wrapper_mission_cards}>
 			{missionState.loading ? <h1 style={{ textAlign: "center" }}>Loading</h1> : null}
 			{missionState.error ? <h1 style={{ textAlign: "center" }}>{missionState.error}</h1> : null}
 			{missionState.error || missionState.loading ? null : (
@@ -34,7 +34,7 @@ const MissionCards = () => {
 					))}
 				</div>
 			)}
-		</>
+		</div>
 	);
 };
 

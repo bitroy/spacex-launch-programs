@@ -67,8 +67,8 @@
 
 @media all and (min-width: 1441px)  {
     .mission_card {
-        width: 50vw;
-        font-size: 3vw;
+        width: 49%;
+        font-size: 1.5vw;
         margin-top: 2rem;
     }
 
