@@ -8,7 +8,7 @@ import {
 } from '../actions/ActionTypes'
 
 const initialMissionState = {
-    limit: 8,
+    limit: 4,
     offset: 0,
     loading: true,
 	error: '',

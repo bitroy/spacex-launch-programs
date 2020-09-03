@@ -6,9 +6,9 @@ const MissionCard = ({ mission }) => {
     return (
 		<div className={styles.mission_card}>
 			<div className={styles.mission_image}>
-				<img 
-					height={100}
-					width={250}
+				<img
+					height={500}
+					width={500}
 					src="./SpaceX.webp" 
 					srcSet={`${normalImg} 920w, ${largeImg} 1024w`} 
 					alt={mission.mission_name} 
