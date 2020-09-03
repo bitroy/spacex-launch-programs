@@ -8,7 +8,9 @@ import {
 } from '../actions/ActionTypes'
 
 const initialMissionState = {
-	loading: true,
+    limit: 8,
+    offset: 0,
+    loading: true,
 	error: '',
 	missions: [],
 	launch_success: null,
@@ -28,9 +30,10 @@ const missionReducer = (state = initialMissionState, action) => {
         case FETCH_SUCCESS:
             return {
                 ...state,
+                offset: state.offset + state.limit,
                 loading: false,
                 error: '',
-                missions: action.data
+                missions: [...state.missions, ...action.data]
             };
         case SHOW_ERROR:
             return {

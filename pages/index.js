@@ -31,9 +31,9 @@ const Home = () => {
 	);
 }
 
-export const getServerSideProps = wrapper.getServerSideProps(async ({store}) => {
+export const getServerSideProps = wrapper.getServerSideProps(({store}) => {
 	const API_URL = process.env.NEXT_PUBLIC_SPACEX_API_URL
-	await store.dispatch(fetchMissionsLaunchData(API_URL))
+	store.dispatch(fetchMissionsLaunchData(API_URL))
 });
 
 export default Home

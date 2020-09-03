@@ -2,7 +2,8 @@ import styles from 'styles/MissionsCards.module.css'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchMissionsLaunchData } from 'redux/actions/QueryAPI'
-import MissionCard from './MissionCard';
+import MissionCard from './MissionCard'
+import LazyLoadMissionsCards from './LazyLoadMissionsCards'
 
 const MissionCards = () => {
 	const dispatch = useDispatch()
@@ -29,9 +30,7 @@ const MissionCards = () => {
 			{missionState.error ? <h1 style={{ textAlign: "center" }}>{missionState.error}</h1> : null}
 			{missionState.error || missionState.loading ? null : (
 				<div className={styles.mission_cards}>
-					{missionState.missions.map((mission, idx) => (
-						<MissionCard key={idx} mission={mission} />
-					))}
+					<LazyLoadMissionsCards />
 				</div>
 			)}
 		</div>

@@ -6,7 +6,14 @@ const MissionCard = ({ mission }) => {
     return (
 		<div className={styles.mission_card}>
 			<div className={styles.mission_image}>
-				<img src="./SpaceX.webp" srcSet={`${normalImg} 920w, ${largeImg} 1024w`} alt={mission.mission_name} loading="lazy" />
+				<img 
+					height={100}
+					width={250}
+					src="./SpaceX.webp" 
+					srcSet={`${normalImg} 920w, ${largeImg} 1024w`} 
+					alt={mission.mission_name} 
+					loading="lazy"
+				/>
 			</div>
 			<div className={styles.mission_title}>
 				{mission.mission_name} #{mission.flight_number}

@@ -8,23 +8,25 @@ export const setMissionsLaunchData = (data = {}) => ({
     data
 });
 
-export const showError = (data = {}) => ({
+export const showError = (data = '') => ({
     type: SHOW_ERROR,
     data
 });
 
 export const fetchMissionsLaunchData = (API_URL) => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
         try {
-            const response = await fetch(API_URL);
+            const { limit, offset } = getState().missions
+            const URL = `${API_URL}?limit=${limit}&offset=${offset}`
+            const response = await fetch(URL);
             const data = await response.json()
             if(data.error) {
                 dispatch(showError('API is Down!'))
             } else {
-                dispatch(setMissionsLaunchData(data))   
+                dispatch(setMissionsLaunchData(data)) 
             }    
         } catch (error) {
             dispatch(showError())
         }   
     }
-} 
+}
