@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import MissionCard from './MissionCard'
 import { useSelector, useDispatch } from 'react-redux'
@@ -6,24 +6,45 @@ import { fetchMissionsLaunchData } from 'redux/actions/QueryAPI'
 
 const LazyLoadMissionsCards = () => {
     const dispatch = useDispatch()
-    const { offset, missions } = useSelector(state => state.missions)
-    const [ref, inView, entry] = useInView({
-        threshold: 0.5
-    })
+    const missionState = useSelector(state => state.missions)
+    const [ref, inView, entry] = useInView()
 
     useEffect(() => {
-        if(offset < 88) {
-            dispatch(fetchMissionsLaunchData(process.env.NEXT_PUBLIC_SPACEX_API_URL))
-        }
-    }, [inView])
+		let API_URL = process.env.NEXT_PUBLIC_SPACEX_API_URL + '?limit=' + missionState.limit
+		if(missionState.launch_success !== null) {
+			API_URL += `&launch_success=${missionState.launch_success}`
+		}
+		if(missionState.land_success != null) {
+            API_URL += `&land_success=${missionState.land_success}`
+		}
+		if(missionState.launch_year != null) {
+            API_URL += `&launch_year=${missionState.launch_year}`
+		}
 
+        if(missionState.launch_success === null 
+                && missionState.land_success ===null 
+                && missionState.launch_year === null) {
+            if(missionState.offset < 100) {
+                dispatch(fetchMissionsLaunchData(API_URL))
+            }
+        } else {
+            dispatch(fetchMissionsLaunchData(API_URL))
+        }
+	}, [
+        missionState.launch_success, 
+        missionState.land_success, 
+        missionState.launch_year,
+        inView,
+    ]);
+    
     return (
         <>
             {
-                missions.map((mission, idx) => <MissionCard key={idx} mission={mission} /> )
+                missionState.missions.map((mission, idx) => <MissionCard key={idx} mission={mission} /> )
             }
             {
-                offset < 88 ? <div ref={ref}></div> : null
+                ( missionState.lazyloading && missionState.offset < 100) 
+                ? <div ref={ref}></div> : null
             }
         </>
     )

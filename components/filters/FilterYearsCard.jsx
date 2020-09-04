@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import FilterButton from './FilterButton';
 import { setLaunchYearFlag } from 'redux/actions/FilterActions';
+import { resetOffset } from 'redux/actions/QueryAPI';
 
 const FilterYearsCard = ({ styles }) => {
     const [filterYears, setFilterYears] = useState([])
@@ -34,6 +35,7 @@ const FilterYearsCard = ({ styles }) => {
 				setYearLaunch(year)
 				dispatch(setLaunchYearFlag(year))
 			}
+			dispatch(resetOffset())
 		}
 	}
 

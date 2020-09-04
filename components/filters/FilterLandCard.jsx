@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setLandSuccessFlag } from 'redux/actions/FilterActions'
 import FilterButton from './FilterButton'
+import { resetOffset } from 'redux/actions/QueryAPI'
 
 const FilterLandCard = ({ styles }) => {
     const [landSuccess, setLandSuccess] = useState(null)
@@ -22,6 +23,7 @@ const FilterLandCard = ({ styles }) => {
 					dispatch(setLandSuccessFlag(false))
 				}
 			}
+			dispatch(resetOffset())
         }
     }
 

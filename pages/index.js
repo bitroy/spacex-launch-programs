@@ -11,6 +11,7 @@ const Home = () => {
 		<div className={styles.container}>
 			<Head>
 				<title>SpaceX Launch Program</title>
+				<link rel="dns-prefetch" href="https://imgbox.com/"></link>
 				<meta name="description" content="SpaceX Launch Program Frontend with Filters" />
 			</Head>
 			<header>
@@ -32,8 +33,10 @@ const Home = () => {
 }
 
 export const getServerSideProps = wrapper.getServerSideProps(({store}) => {
+	const limit = store.getState().limit;
 	const API_URL = process.env.NEXT_PUBLIC_SPACEX_API_URL
-	store.dispatch(fetchMissionsLaunchData(API_URL))
+	const URL = `API_URL?limit=${limit}`
+	store.dispatch(fetchMissionsLaunchData(URL))
 });
 
 export default Home

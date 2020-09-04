@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import FilterButton from './FilterButton'
 import { setLaunchSuccessFlag } from 'redux/actions/FilterActions'
+import { resetOffset } from 'redux/actions/QueryAPI'
 
 const FilterLaunchCard = ({ styles }) => {
     const [launchSuccess, setLaunchSuccess] = useState(null)
@@ -22,6 +23,7 @@ const FilterLaunchCard = ({ styles }) => {
 					dispatch(setLaunchSuccessFlag(false))
 				}
 			}
+			dispatch(resetOffset())
         }
     }
     

@@ -4,12 +4,14 @@ import {
     SHOW_ERROR,
     SET_LAUNCH_FLAG,
     SET_LAND_FLAG,
-    SET_LAUNCH_YEAR
+    SET_LAUNCH_YEAR,
+    RESET_OFFSET
 } from '../actions/ActionTypes'
 
 const initialMissionState = {
-    limit: 4,
+    limit: 8,
     offset: 0,
+    lazyloading: true,
     loading: true,
 	error: '',
 	missions: [],
@@ -33,7 +35,15 @@ const missionReducer = (state = initialMissionState, action) => {
                 offset: state.offset + state.limit,
                 loading: false,
                 error: '',
-                missions: [...state.missions, ...action.data]
+                missions: [...state.missions, ...action.data],
+                lazyloading: (action.data.length < state.limit) ? false : true, 
+            };
+        case RESET_OFFSET: 
+            return {
+                ...state,
+                offset: 0,
+                missions: [],
+                lazyloading: true
             };
         case SHOW_ERROR:
             return {
