@@ -1,7 +1,6 @@
 import styles from "styles/Home.module.css";
 import { wrapper } from "redux/Store";
 import Head from "next/head";
-
 import FiltersCard from "components/filters/FiltersCard";
 import MissionCards from "components/missions/MissionsCards";
 import { fetchMissionsLaunchData } from "redux/actions/QueryAPI";
@@ -28,9 +27,6 @@ const Home = () => {
           <MissionCards />
         </div>
       </main>
-      <footer>
-        <div className={styles.footer_section}>Developed by: Pranoy Roy</div>
-      </footer>
     </div>
   );
 };
