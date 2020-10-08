@@ -6,7 +6,7 @@ import FilterLaunchCard from "./FilterLaunchCard";
 const FiltersCard = () => {
   return (
     <div className={styles.filter_card}>
-      <div className={styles.filter_card_header}>Filters</div>
+      {/* <div className={styles.filter_card_header}>Filters</div> */}
       <FilterYearsCard styles={styles} />
       <FilterLaunchCard styles={styles} />
       <FilterLandCard styles={styles} />

@@ -25,6 +25,16 @@
   flex-wrap: wrap;
 }
 
+.filter__select_launchyear {
+  display: flex;
+  height: 2rem;
+  margin: 0.5rem;
+  padding: 0 0.5rem;
+  border: thin solid grey;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
 @media all and (max-width: 1024px) and (min-width: 700px) {
   .filter_card_header {
     font-size: 3vw;
