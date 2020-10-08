@@ -1,5 +1,4 @@
 .container {
-  max-width: none;
   margin: 0.5rem;
 }
 
@@ -28,7 +27,7 @@
 @media all and (max-width: 1440px) and (min-width: 700px) {
   .parent {
     display: grid;
-    grid-template-columns: minmax(10rem, 25%) auto;
+    grid-template-columns: minmax(10rem, 25%) 1fr;
   }
 }
 
