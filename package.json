@@ -29,7 +29,7 @@
     }
   },
   "lint-staged": {
-    "(components||pages||redux||styles)/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "{components,pages,redux,styles}/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
   }

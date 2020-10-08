@@ -1,59 +1,59 @@
 .filter_button {
-    flex: 0 0 50%;
+  flex: 0 0 50%;
 }
 
 .button {
-    background: lightgreen;
-    color: black;
-    font-weight: bold;
-    border: none;
-    border-radius: 0.25rem;
-    padding: 1rem 1rem;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    margin: 0.5rem;
+  background: lightgreen;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 1rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0.5rem;
 }
 
 .button_active {
-    background: green;
-    color: black;
-    font-weight: bold;
-    border: none;
-    border-radius: 0.25rem;
-    padding: 1rem 1rem;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    margin: 0.5rem;
+  background: green;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 1rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0.5rem;
 }
 
 @media all and (max-width: 1024px) and (min-width: 700px) {
-    .button {
-        font-size: 1.8vw;
-    }
+  .button {
+    font-size: 1.8vw;
+  }
 
-    .button_active {
-        font-size: 1.8vw;
-    }   
+  .button_active {
+    font-size: 1.8vw;
+  }
 }
 
 @media all and (max-width: 1440px) and (min-width: 1024px) {
-    .button {
-        font-size: 1.4vw;
-    }
+  .button {
+    font-size: 1.4vw;
+  }
 
-    .button_active {
-        font-size: 1.4vw;
-    }
+  .button_active {
+    font-size: 1.4vw;
+  }
 }
 
-@media all and (min-width: 1441px)  {
-    .button {
-        font-size: 1.8vw;
-    }
+@media all and (min-width: 1441px) {
+  .button {
+    font-size: 1.8vw;
+  }
 
-    .button_active {
-        font-size: 1.8vw;
-    }
+  .button_active {
+    font-size: 1.8vw;
+  }
 }

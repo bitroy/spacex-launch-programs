@@ -1,64 +1,64 @@
 .filter_card {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0.75rem;
-    background: #fffefe;
-    border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.75rem;
+  background: #fffefe;
+  border-radius: 0.25rem;
 }
 
 .filter_card_header {
-    margin-left: 0.5rem;
-    font-weight: bold;
-    font-size: 8vw;
+  margin-left: 0.5rem;
+  font-weight: bold;
+  font-size: 8vw;
 }
 
 .filter_section_header {
-    display: flex;
-    justify-content: center;
-    font-weight: bolder;
-    font-size: 6vw;
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 6vw;
 }
 
 .filter_year_buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-@media all and (max-width: 1024px) and (min-width: 700px)  {
-    .filter_card_header {
-        font-size: 3vw;
-    }
+@media all and (max-width: 1024px) and (min-width: 700px) {
+  .filter_card_header {
+    font-size: 3vw;
+  }
 
-    .filter_section_header {
-        font-size: 2vw;
-    }
+  .filter_section_header {
+    font-size: 2vw;
+  }
 }
 
-@media all and (max-width: 1440px) and (min-width: 1024px)  {
-    .filter_card_header {
-        font-size: 2vw;
-    }
+@media all and (max-width: 1440px) and (min-width: 1024px) {
+  .filter_card_header {
+    font-size: 2vw;
+  }
 
-    .filter_section_header {
-        font-size: 1.4vw;
-    }
+  .filter_section_header {
+    font-size: 1.4vw;
+  }
 }
 
-@media all and (min-width: 1441px)  {
-    .filter_card {
-        width: 50vw;
-    }
+@media all and (min-width: 1441px) {
+  .filter_card {
+    width: 50vw;
+  }
 
-    .filter_div {
-        margin: 1rem;
-    }
+  .filter_div {
+    margin: 1rem;
+  }
 
-    .filter_card_header {
-        font-size: 3vw;
-    }
+  .filter_card_header {
+    font-size: 3vw;
+  }
 
-    .filter_section_header {
-        font-size: 2vw;
-    }
+  .filter_section_header {
+    font-size: 2vw;
+  }
 }

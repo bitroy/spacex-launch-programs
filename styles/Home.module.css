@@ -38,7 +38,7 @@
   font-size: 6vw;
 }
 
-@media all and (max-width: 1024px) and (min-width: 700px)  {
+@media all and (max-width: 1024px) and (min-width: 700px) {
   .header_section {
     font-size: 4vw;
     font-weight: bold;
@@ -58,7 +58,7 @@
   }
 }
 
-@media all and (max-width: 1440px) and (min-width: 1024px)  {
+@media all and (max-width: 1440px) and (min-width: 1024px) {
   .header_section {
     font-size: 4vw;
     font-weight: bold;
@@ -79,7 +79,7 @@
   }
 }
 
-@media all and (min-width: 1441px)  {
+@media all and (min-width: 1441px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -104,7 +104,7 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .right_section {
     display: flex;
     flex-direction: column;

@@ -1,29 +1,28 @@
 .mission_cards {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
 }
 
-@media all and (max-width: 1440px) and (min-width: 700px)  {
-    .mission_cards {
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-right: 0.5rem;
-        margin-left: 0.5rem; 
-    }
+@media all and (max-width: 1440px) and (min-width: 700px) {
+  .mission_cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
 }
 
 @media all and (min-width: 1441px) {
-    .wrapper_mission_cards {
-        max-width: 50vw;
-    }
+  .wrapper_mission_cards {
+    max-width: 50vw;
+  }
 
-    .mission_cards {
-        justify-content: space-between;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-right: 0.5rem;
-        margin-left: 0.5rem; 
-    }
+  .mission_cards {
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
 }
-
