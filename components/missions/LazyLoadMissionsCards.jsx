@@ -22,17 +22,7 @@ const LazyLoadMissionsCards = () => {
       API_URL += `&launch_year=${missionState.launch_year}`;
     }
 
-    if (
-      missionState.launch_success === null &&
-      missionState.land_success === null &&
-      missionState.launch_year === null
-    ) {
-      if (missionState.offset < 100) {
-        dispatch(fetchMissionsLaunchData(API_URL));
-      }
-    } else {
-      dispatch(fetchMissionsLaunchData(API_URL));
-    }
+    dispatch(fetchMissionsLaunchData(API_URL));
   }, [
     missionState.launch_success,
     missionState.land_success,
@@ -45,9 +35,7 @@ const LazyLoadMissionsCards = () => {
       {missionState.missions.map((mission, idx) => (
         <MissionCard key={idx} mission={mission} />
       ))}
-      {missionState.lazyloading && missionState.offset < 100 ? (
-        <div ref={ref}></div>
-      ) : null}
+      {missionState.lazyloading ? <div ref={ref}></div> : null}
     </>
   );
 };

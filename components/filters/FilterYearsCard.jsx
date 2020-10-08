@@ -46,6 +46,7 @@ const FilterYearsCard = ({ styles }) => {
         className={styles.filter__select_launchyear}
         value={yearLaunch}
         onChange={setLaunchYear}
+        aria-label="yearselect"
       >
         <option value=""></option>
         {filterYears.map((year, idx) => (

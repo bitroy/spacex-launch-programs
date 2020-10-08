@@ -5,10 +5,11 @@
 .button {
   background: lightgreen;
   color: black;
+  font-size: clamp(1rem, 0.5rem + 1.5vw, 1rem);
   font-weight: bold;
   border: none;
   border-radius: 0.25rem;
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -19,41 +20,12 @@
   background: green;
   color: black;
   font-weight: bold;
+  font-size: clamp(1rem, 1rem + 1.5vw, 2rem);
   border: none;
   border-radius: 0.25rem;
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   margin: 0.5rem;
-}
-
-@media all and (max-width: 1024px) and (min-width: 700px) {
-  .button {
-    font-size: 1.8vw;
-  }
-
-  .button_active {
-    font-size: 1.8vw;
-  }
-}
-
-@media all and (max-width: 1440px) and (min-width: 1024px) {
-  .button {
-    font-size: 1.4vw;
-  }
-
-  .button_active {
-    font-size: 1.4vw;
-  }
-}
-
-@media all and (min-width: 1441px) {
-  .button {
-    font-size: 1.8vw;
-  }
-
-  .button_active {
-    font-size: 1.8vw;
-  }
 }
