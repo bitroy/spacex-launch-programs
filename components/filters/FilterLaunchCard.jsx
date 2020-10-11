@@ -28,11 +28,11 @@ const FilterLaunchCard = ({ styles }) => {
   };
 
   return (
-    <div className={styles.filter_div}>
+    <div className={styles.filter_card}>
       <div className={styles.filter_section_header}>Successful Launch</div>
       <hr width="50%" />
       <div
-        className={styles.filter_year_buttons}
+        className={styles.filter_buttons_groups}
         onClick={(e) => setSuccessfulLaunch(e)}
       >
         <FilterButton

@@ -1,9 +1,14 @@
+.filter_cards {
+  display: flex;
+  flex-direction: column;
+  background: #fffefe;
+  margin-top: 0.75rem;
+  border-radius: 0.25rem;
+}
+
 .filter_card {
   display: flex;
   flex-direction: column;
-  margin-top: 0.75rem;
-  background: #fffefe;
-  border-radius: 0.25rem;
 }
 
 .filter_section_header {
@@ -13,10 +18,9 @@
   font-size: clamp(0.75rem, 0.75rem + 1vw, 1.5rem);
 }
 
-.filter_year_buttons {
+.filter_buttons_groups {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .filter__select_launchyear {
@@ -31,9 +35,5 @@
 @media all and (min-width: 1441px) {
   .filter_card {
     width: 50vw;
-  }
-
-  .filter_div {
-    margin: 1rem;
   }
 }
