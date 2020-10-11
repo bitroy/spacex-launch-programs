@@ -1,27 +1,32 @@
 .container {
-  margin: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .parent {
   display: flex;
   flex-direction: column;
+  margin: 0.5rem;
 }
 
 .left_section {
   display: flex;
   flex-direction: column;
+  /* background-color: pink; */
 }
 
 .right_section {
   display: flex;
   flex-direction: column;
+  /* background-color: purple; */
 }
 
 .header_section {
-  font-size: clamp(1rem, 1rem + 2vw, 3rem);
+  display: flex;
+  justify-content: center;
+  font-size: clamp(1rem, 1rem + 1.5vw, 3rem);
   font-weight: bold;
-  text-align: center;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 @media all and (max-width: 1440px) and (min-width: 700px) {

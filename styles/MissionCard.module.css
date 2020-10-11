@@ -5,7 +5,7 @@
   margin-top: 0.75rem;
   background: #ffffff;
   border-radius: 0.25rem;
-  font-size: clamp(1rem, 1rem+2vw, 2rem);
+  font-size: clamp(1rem, 1rem+1.5vw, 2rem);
 }
 
 .mission_image {
@@ -59,7 +59,7 @@
   .mission_card {
     flex: 0 0 calc(25% - 1rem);
     margin: 0.75rem 0.5rem 0 0.5rem;
-    font-size: clamp(0.75rem, 1.25vw, 1.5rem);
+    font-size: clamp(0.75rem, 0.75 + 1vw, 1.5rem);
   }
 }
 

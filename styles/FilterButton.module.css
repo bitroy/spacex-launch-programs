@@ -5,7 +5,7 @@
 .button {
   background: lightgreen;
   color: black;
-  font-size: clamp(1rem, 0.5rem + 1.5vw, 1rem);
+  font-size: clamp(0.5rem, 0.5rem + 1vw, 1rem);
   font-weight: bold;
   border: none;
   border-radius: 0.25rem;
@@ -20,7 +20,7 @@
   background: green;
   color: black;
   font-weight: bold;
-  font-size: clamp(1rem, 0.5rem + 1.5vw, 1rem);
+  font-size: clamp(0.5rem, 0.5rem + 1vw, 1rem);
   border: none;
   border-radius: 0.25rem;
   padding: 0.5rem 0.5rem;
