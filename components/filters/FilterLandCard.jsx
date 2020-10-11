@@ -3,28 +3,43 @@ import { useDispatch } from "react-redux";
 import { setLandSuccessFlag } from "redux/actions/FilterActions";
 import FilterButton from "./FilterButton";
 import { resetOffset } from "redux/actions/QueryAPI";
+import useDebounce from "hooks/useDebounce";
 
 const FilterLandCard = ({ styles }) => {
   const [landSuccess, setLandSuccess] = useState(null);
   const dispatch = useDispatch();
+  const debounce = useDebounce();
 
-  const setSuccessfulLand = (e) => {
-    const land = e.target.innerText.trim();
+  const setSuccessfulLand = (land) => {
     if (land !== "") {
       if (land === landSuccess) {
-        setLandSuccess(null);
         dispatch(setLandSuccessFlag(null));
       } else {
         if (land === "True" && landSuccess !== "True") {
-          setLandSuccess("True");
           dispatch(setLandSuccessFlag(true));
         } else if (land === "False" && landSuccess !== "False") {
-          setLandSuccess("False");
           dispatch(setLandSuccessFlag(false));
         }
       }
       dispatch(resetOffset());
     }
+  };
+
+  const handleClick = (e) => {
+    const land = e.target.innerText.trim();
+    if (land !== "") {
+      if (land === landSuccess) {
+        setLandSuccess(null);
+      } else {
+        if (land === "True" && landSuccess !== "True") {
+          setLandSuccess(land);
+        } else if (land === "False" && landSuccess !== "False") {
+          setLandSuccess(land);
+        }
+      }
+    }
+
+    debounce(() => setSuccessfulLand(land));
   };
 
   return (
@@ -33,7 +48,7 @@ const FilterLandCard = ({ styles }) => {
       <hr width="50%" />
       <div
         className={styles.filter_buttons_groups}
-        onClick={(e) => setSuccessfulLand(e)}
+        onClick={(e) => handleClick(e)}
       >
         <FilterButton
           className={styles.filter_button}

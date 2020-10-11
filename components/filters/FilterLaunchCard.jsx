@@ -3,28 +3,43 @@ import { useDispatch } from "react-redux";
 import FilterButton from "./FilterButton";
 import { setLaunchSuccessFlag } from "redux/actions/FilterActions";
 import { resetOffset } from "redux/actions/QueryAPI";
+import useDebounce from "hooks/useDebounce";
 
 const FilterLaunchCard = ({ styles }) => {
   const [launchSuccess, setLaunchSuccess] = useState(null);
   const dispatch = useDispatch();
+  const debounce = useDebounce();
 
-  const setSuccessfulLaunch = (e) => {
-    const launch = e.target.innerText.trim();
+  const setSuccessfulLaunch = (launch) => {
     if (launch !== "") {
       if (launch === launchSuccess) {
-        setLaunchSuccess(null);
         dispatch(setLaunchSuccessFlag(null));
       } else {
         if (launch === "True" && launchSuccess !== "True") {
-          setLaunchSuccess("True");
           dispatch(setLaunchSuccessFlag(true));
         } else if (launch === "False" && launchSuccess !== "False") {
-          setLaunchSuccess("False");
           dispatch(setLaunchSuccessFlag(false));
         }
       }
       dispatch(resetOffset());
     }
+  };
+
+  const handleClick = (e) => {
+    const launch = e.target.innerText;
+    if (launch !== "") {
+      if (launch === launchSuccess) {
+        setLaunchSuccess(null);
+      } else {
+        if (launch === "True" && launchSuccess !== "True") {
+          setLaunchSuccess(launch);
+        } else if (launch === "False" && launchSuccess !== "False") {
+          setLaunchSuccess(launch);
+        }
+      }
+    }
+
+    debounce(() => setSuccessfulLaunch(launch));
   };
 
   return (
@@ -33,7 +48,7 @@ const FilterLaunchCard = ({ styles }) => {
       <hr width="50%" />
       <div
         className={styles.filter_buttons_groups}
-        onClick={(e) => setSuccessfulLaunch(e)}
+        onClick={(e) => handleClick(e)}
       >
         <FilterButton
           active={launchSuccess === "True" ? true : false}
