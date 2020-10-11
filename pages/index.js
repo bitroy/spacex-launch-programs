@@ -31,11 +31,4 @@ const Home = () => {
   );
 };
 
-export const getServerSideProps = wrapper.getServerSideProps(({ store }) => {
-  const limit = store.getState().limit;
-  const API_URL = process.env.NEXT_PUBLIC_SPACEX_API_URL;
-  const URL = `${API_URL}?limit=${limit}`;
-  store.dispatch(fetchMissionsLaunchData(URL));
-});
-
 export default Home;
