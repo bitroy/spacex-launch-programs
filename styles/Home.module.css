@@ -12,13 +12,11 @@
 .left_section {
   display: flex;
   flex-direction: column;
-  /* background-color: pink; */
 }
 
 .right_section {
   display: flex;
   flex-direction: column;
-  /* background-color: purple; */
 }
 
 .header_section {

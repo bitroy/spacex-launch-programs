@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-moz-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0;
   background: #eaeaea;
