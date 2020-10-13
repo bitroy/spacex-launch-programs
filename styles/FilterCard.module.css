@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: clamp(0.75rem, 0.75rem + 1vw, 1.5rem);
+  font-size: clamp(0.5rem, 0.5rem + 1vw, 1.5rem);
 }
 
 .filter_buttons_groups {
