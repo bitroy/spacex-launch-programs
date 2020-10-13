@@ -30,7 +30,11 @@
 @media all and (max-width: 1440px) and (min-width: 700px) {
   .parent {
     display: grid;
-    grid-template-columns: minmax(10rem, 25%) 1fr;
+    grid-template-columns: minmax(10rem, 20%) 1fr;
+  }
+
+  .left_section {
+    margin-left: 0.5rem;
   }
 }
 

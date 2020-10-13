@@ -12,6 +12,7 @@ const FilterLandCard = ({ styles }) => {
 
   const setSuccessfulLand = (land) => {
     if (land !== "") {
+      dispatch(resetOffset());
       if (land === landSuccess) {
         dispatch(setLandSuccessFlag(null));
       } else {
@@ -21,7 +22,6 @@ const FilterLandCard = ({ styles }) => {
           dispatch(setLandSuccessFlag(false));
         }
       }
-      dispatch(resetOffset());
     }
   };
 

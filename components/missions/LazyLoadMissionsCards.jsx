@@ -21,7 +21,6 @@ const LazyLoadMissionsCards = () => {
     if (missionState.launch_year != null) {
       API_URL += `&launch_year=${missionState.launch_year}`;
     }
-
     dispatch(fetchMissionsLaunchData(API_URL));
   }, [
     missionState.launch_success,
@@ -35,7 +34,7 @@ const LazyLoadMissionsCards = () => {
       {missionState.missions.map((mission, idx) => (
         <MissionCard key={idx} mission={mission} />
       ))}
-      {missionState.lazyloading ? <div ref={ref}></div> : null}
+      {missionState.lazyloading ? <div ref={ref}>Loading...</div> : null}
     </>
   );
 };

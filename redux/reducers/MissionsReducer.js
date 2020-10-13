@@ -30,12 +30,22 @@ const missionReducer = (state = initialMissionState, action) => {
         missions: action.payload.missions.missions,
       };
     case FETCH_SUCCESS:
+      let missions = [...state.missions];
+      action.data.forEach((element) => {
+        if (
+          !missions.some(
+            (mission) => mission.flight_number === element.flight_number
+          )
+        ) {
+          missions.push(element);
+        }
+      });
       return {
         ...state,
         offset: state.offset + state.limit,
         loading: false,
         error: "",
-        missions: [...state.missions, ...action.data],
+        missions: [...missions],
         lazyloading: action.data.length < state.limit ? false : true,
       };
     case RESET_OFFSET:

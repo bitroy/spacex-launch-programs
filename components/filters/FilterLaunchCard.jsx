@@ -12,6 +12,7 @@ const FilterLaunchCard = ({ styles }) => {
 
   const setSuccessfulLaunch = (launch) => {
     if (launch !== "") {
+      dispatch(resetOffset());
       if (launch === launchSuccess) {
         dispatch(setLaunchSuccessFlag(null));
       } else {
@@ -21,7 +22,6 @@ const FilterLaunchCard = ({ styles }) => {
           dispatch(setLaunchSuccessFlag(false));
         }
       }
-      dispatch(resetOffset());
     }
   };
 
