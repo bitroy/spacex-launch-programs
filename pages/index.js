@@ -1,7 +1,7 @@
 import styles from "styles/Home.module.css";
 import Head from "next/head";
 import FiltersCard from "components/filters/FiltersCard";
-import MissionCards from "components/missions/MissionsCards";
+import LazyLoadMissionsCards from "components/missions/LazyLoadMissionsCards";
 
 const Home = () => {
   return (
@@ -23,7 +23,7 @@ const Home = () => {
             <FiltersCard />
           </div>
           <div className={styles.right_section}>
-            <MissionCards />
+            <LazyLoadMissionsCards />
           </div>
         </main>
       </div>

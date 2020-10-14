@@ -27,6 +27,7 @@ const FilterYearsCard = ({ styles }) => {
   };
 
   const setLaunchYear = (e) => {
+    dispatch(resetOffset());
     const year = e.target.value;
     if (yearLaunch === year) {
       setYearLaunch("");
@@ -35,7 +36,6 @@ const FilterYearsCard = ({ styles }) => {
       setYearLaunch(year);
       dispatch(setLaunchYearFlag(year));
     }
-    dispatch(resetOffset());
   };
 
   return (

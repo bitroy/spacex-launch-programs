@@ -1,4 +1,14 @@
-import { FETCH_SUCCESS, SHOW_ERROR, RESET_OFFSET } from "./ActionTypes";
+import {
+  FETCH_SUCCESS,
+  SHOW_ERROR,
+  RESET_OFFSET,
+  UPDATE_OFFSET,
+} from "./ActionTypes";
+
+export const updateOffset = (data = 0) => ({
+  type: UPDATE_OFFSET,
+  data,
+});
 
 export const resetOffset = (data = 0) => ({
   type: RESET_OFFSET,
@@ -16,11 +26,9 @@ export const showError = (data = "") => ({
 });
 
 export const fetchMissionsLaunchData = (API_URL) => {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     try {
-      const { offset } = getState().missions;
-      const URL = `${API_URL}&offset=${offset}`;
-      const response = await fetch(URL);
+      const response = await fetch(API_URL);
       const data = await response.json();
       if (data.error) {
         dispatch(showError("API is Down!"));

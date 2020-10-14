@@ -6,6 +6,7 @@ import {
   SET_LAND_FLAG,
   SET_LAUNCH_YEAR,
   RESET_OFFSET,
+  UPDATE_OFFSET,
 } from "../actions/ActionTypes";
 
 const initialMissionState = {
@@ -30,23 +31,17 @@ const missionReducer = (state = initialMissionState, action) => {
         missions: action.payload.missions.missions,
       };
     case FETCH_SUCCESS:
-      let missions = [...state.missions];
-      action.data.forEach((element) => {
-        if (
-          !missions.some(
-            (mission) => mission.flight_number === element.flight_number
-          )
-        ) {
-          missions.push(element);
-        }
-      });
       return {
         ...state,
-        offset: state.offset + state.limit,
         loading: false,
         error: "",
-        missions: [...missions],
+        missions: [...state.missions, ...action.data],
         lazyloading: action.data.length < state.limit ? false : true,
+      };
+    case UPDATE_OFFSET:
+      return {
+        ...state,
+        offset: action.data,
       };
     case RESET_OFFSET:
       return {
