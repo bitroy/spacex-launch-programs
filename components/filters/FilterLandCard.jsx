@@ -46,10 +46,7 @@ const FilterLandCard = ({ styles }) => {
     <div className={styles.filter_card}>
       <div className={styles.filter_section_header}>Successful Landing</div>
       <hr width="50%" />
-      <div
-        className={styles.filter_buttons_groups}
-        onClick={(e) => handleClick(e)}
-      >
+      <div className={styles.filter_buttons_groups} onClick={handleClick}>
         <FilterButton
           className={styles.filter_button}
           active={landSuccess === "True" ? true : false}

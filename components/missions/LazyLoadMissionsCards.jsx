@@ -36,13 +36,15 @@ const LazyLoadMissionsCards = () => {
     inView,
   ]);
 
+  const h1style = {
+    textAlign: "center",
+  };
+
   return (
     <div className={styles.wrapper_mission_cards}>
-      {missionState.loading ? (
-        <h1 style={{ textAlign: "center" }}>Loading</h1>
-      ) : null}
+      {missionState.loading ? <h1 style={h1style}>Loading</h1> : null}
       {missionState.error ? (
-        <h1 style={{ textAlign: "center" }}>{missionState.error}</h1>
+        <h1 style={h1style}>{missionState.error}</h1>
       ) : null}
       {missionState.error || missionState.loading ? null : (
         <div className={styles.mission_cards}>
