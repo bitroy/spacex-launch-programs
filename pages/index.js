@@ -1,7 +1,14 @@
-import styles from "styles/Home.module.css";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+import { END } from "redux-saga";
 import FiltersCard from "components/filters/FiltersCard";
-import LazyLoadMissionsCards from "components/missions/LazyLoadMissionsCards";
+import { requestMissionsData } from "redux/actions/QueryAPI";
+import { wrapper } from "redux/store";
+import styles from "styles/Home.module.css";
+
+const LoadMissions = dynamic(() =>
+  import("../components/missions/LoadMissions")
+);
 
 const Home = () => {
   return (
@@ -23,12 +30,20 @@ const Home = () => {
             <FiltersCard />
           </div>
           <div className={styles.right_section}>
-            <LazyLoadMissionsCards />
+            <LoadMissions />
           </div>
         </main>
       </div>
     </>
   );
 };
+
+export const getServerSideProps = wrapper.getServerSideProps(
+  async ({ store }) => {
+    store.dispatch(requestMissionsData());
+    store.dispatch(END);
+    await store.sagaTask.toPromise();
+  }
+);
 
 export default Home;

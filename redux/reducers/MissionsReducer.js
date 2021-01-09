@@ -5,15 +5,11 @@ import {
   SET_LAUNCH_FLAG,
   SET_LAND_FLAG,
   SET_LAUNCH_YEAR,
-  RESET_OFFSET,
-  UPDATE_OFFSET,
+  SET_MISSIONS_DATA,
 } from "../actions/ActionTypes";
 
 const initialMissionState = {
-  limit: 8,
-  offset: 0,
-  lazyloading: true,
-  loading: true,
+  loading: false,
   error: "",
   missions: [],
   launch_success: null,
@@ -28,7 +24,12 @@ const missionReducer = (state = initialMissionState, action) => {
         ...state,
         loading: false,
         error: "",
-        missions: action.payload.missions.missions,
+        missions: [...action.payload.missionsData.missions],
+      };
+    case SET_MISSIONS_DATA:
+      return {
+        ...state,
+        missions: [...action.payload],
       };
     case FETCH_SUCCESS:
       return {
@@ -37,18 +38,6 @@ const missionReducer = (state = initialMissionState, action) => {
         error: "",
         missions: [...state.missions, ...action.data],
         lazyloading: action.data.length < state.limit ? false : true,
-      };
-    case UPDATE_OFFSET:
-      return {
-        ...state,
-        offset: action.data,
-      };
-    case RESET_OFFSET:
-      return {
-        ...state,
-        offset: 0,
-        missions: [],
-        lazyloading: true,
       };
     case SHOW_ERROR:
       return {
@@ -60,16 +49,19 @@ const missionReducer = (state = initialMissionState, action) => {
     case SET_LAUNCH_FLAG:
       return {
         ...state,
+        missions: [],
         launch_success: action.data,
       };
     case SET_LAND_FLAG:
       return {
         ...state,
+        missions: [],
         land_success: action.data,
       };
     case SET_LAUNCH_YEAR:
       return {
         ...state,
+        missions: [],
         launch_year: action.data,
       };
     default:
