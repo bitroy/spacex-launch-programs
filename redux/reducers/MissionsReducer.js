@@ -9,7 +9,6 @@ import {
 } from "../actions/ActionTypes";
 
 const initialMissionState = {
-  loading: false,
   error: "",
   missions: [],
   launch_success: null,
@@ -22,7 +21,6 @@ const missionReducer = (state = initialMissionState, action) => {
     case HYDRATE:
       return {
         ...state,
-        loading: false,
         error: "",
         missions: [...action.payload.missionsData.missions],
       };
@@ -34,15 +32,12 @@ const missionReducer = (state = initialMissionState, action) => {
     case FETCH_SUCCESS:
       return {
         ...state,
-        loading: false,
         error: "",
         missions: [...state.missions, ...action.data],
-        lazyloading: action.data.length < state.limit ? false : true,
       };
     case SHOW_ERROR:
       return {
         ...state,
-        loading: false,
         error: action.data ? action.data : "Something Went Wrong!",
         missions: [],
       };

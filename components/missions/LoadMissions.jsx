@@ -12,7 +12,7 @@ const LoadMissions = () => {
 
   useEffect(() => {
     if (missionsState.launch_year !== null) {
-      API_URL += `?launch_year=${missionsState.launch_year}`;
+      API_URL += `&launch_year=${missionsState.launch_year}`;
     }
     if (missionsState.launch_success !== null) {
       API_URL += `&launch_success=${missionsState.launch_success}`;
@@ -20,7 +20,7 @@ const LoadMissions = () => {
     if (missionsState.land_success !== null) {
       API_URL += `&land_success=${missionsState.land_success}`;
     }
-    console.log(API_URL);
+
     dispatch(requestFilteredMissionsData(API_URL));
   }, [
     missionsState.launch_year,
