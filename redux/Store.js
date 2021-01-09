@@ -12,7 +12,6 @@ export const makeStore = () => {
       ? composeWithDevTools(applyMiddleware(sagaMiddleWare))
       : applyMiddleware(sagaMiddleWare);
   const store = createStore(rootReducer, middleWare);
-
   store.sagaTask = sagaMiddleWare.run(rootSaga);
   return store;
 };
