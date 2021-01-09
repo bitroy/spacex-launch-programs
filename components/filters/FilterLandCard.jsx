@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setLandSuccessFlag } from "redux/actions/FilterActions";
 import FilterButton from "./FilterButton";
-import { resetOffset } from "redux/actions/QueryAPI";
 import useDebounce from "hooks/useDebounce";
 
 const FilterLandCard = ({ styles }) => {
@@ -12,7 +11,6 @@ const FilterLandCard = ({ styles }) => {
 
   const setSuccessfulLand = (land) => {
     if (land !== "") {
-      dispatch(resetOffset());
       if (land === landSuccess) {
         dispatch(setLandSuccessFlag(null));
       } else {

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import FilterButton from "./FilterButton";
 import { setLaunchSuccessFlag } from "redux/actions/FilterActions";
-import { resetOffset } from "redux/actions/QueryAPI";
 import useDebounce from "hooks/useDebounce";
 
 const FilterLaunchCard = ({ styles }) => {
@@ -12,7 +11,6 @@ const FilterLaunchCard = ({ styles }) => {
 
   const setSuccessfulLaunch = (launch) => {
     if (launch !== "") {
-      dispatch(resetOffset());
       if (launch === launchSuccess) {
         dispatch(setLaunchSuccessFlag(null));
       } else {

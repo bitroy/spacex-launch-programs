@@ -1,42 +1,30 @@
 import {
-  FETCH_SUCCESS,
   SHOW_ERROR,
-  RESET_OFFSET,
-  UPDATE_OFFSET,
+  MISSIONS_DATA_REQUEST,
+  FILTERED_MISSIONS_DATA_REQUEST,
 } from "./ActionTypes";
 
-export const updateOffset = (data = 0) => ({
-  type: UPDATE_OFFSET,
-  data,
+export const fetchMissionsData = async (API_URL) => {
+  try {
+    const apiURL = API_URL ?? process.env.NEXT_PUBLIC_SPACEX_API_URL;
+    const response = await fetch(apiURL);
+    const data = response.json();
+    return data;
+  } catch (error) {
+    dispatch(showError("API is Down!"));
+  }
+};
+
+export const requestMissionsData = () => ({
+  type: MISSIONS_DATA_REQUEST,
 });
 
-export const resetOffset = (data = 0) => ({
-  type: RESET_OFFSET,
-  data,
-});
-
-export const setMissionsLaunchData = (data = {}) => ({
-  type: FETCH_SUCCESS,
-  data,
+export const requestFilteredMissionsData = (apiURL) => ({
+  type: FILTERED_MISSIONS_DATA_REQUEST,
+  payload: apiURL,
 });
 
 export const showError = (data = "") => ({
   type: SHOW_ERROR,
   data,
 });
-
-export const fetchMissionsLaunchData = (API_URL) => {
-  return async (dispatch) => {
-    try {
-      const response = await fetch(API_URL);
-      const data = await response.json();
-      if (data.error) {
-        dispatch(showError("API is Down!"));
-      } else {
-        dispatch(setMissionsLaunchData(data));
-      }
-    } catch (error) {
-      dispatch(showError());
-    }
-  };
-};
