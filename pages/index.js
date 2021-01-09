@@ -2,8 +2,8 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import { END } from "redux-saga";
 import FiltersCard from "components/filters/FiltersCard";
-import { requestMissionsData } from "redux/actions/QueryAPI";
-import { wrapper } from "redux/store";
+import { requestMissionsData } from "../redux/actions/QueryAPI";
+import { wrapper } from "../redux/store";
 import styles from "styles/Home.module.css";
 
 const LoadMissions = dynamic(() =>
